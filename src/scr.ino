@@ -50,6 +50,7 @@ boolean Waduh_Setting = false;
 
 DMD dmd(5, 1); //untuk mengatur jumlah panel yang kamu pakai
 long start;
+int menite = 1;           ///waktu iqomah lamanya
 double lintang = -7.0667; //Latitude
 double bujur = 110.4;     //Longitude
 int Z = 7;                //Zona Waktu GMT WIB biasanya 7
@@ -96,7 +97,6 @@ void loop()
 
 //////////////////////==========================Program Jam==============
 
-int menite = 1; ///waktu iqomah lamanya
 void mulai()
 {
   dmd.clearScreen(true);
