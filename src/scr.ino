@@ -9,14 +9,14 @@
 #include <huruf_kecilku.h>
 #include <SPI.h>
 char weekDay[][9] = {
-  "MONDAY",
-  "TUESDAY",
-  "WEDNESDAY",
-  "THURSDAY",
-  "FRIDAY",
-  "SATURDAY",
-  "SUNDAY",
-  "MONDAY",
+    "MONDAY",
+    "TUESDAY",
+    "WEDNESDAY",
+    "THURSDAY",
+    "FRIDAY",
+    "SATURDAY",
+    "SUNDAY",
+    "MONDAY",
 }; // array hari, dihitung mulai dari senin, hari senin angka nya =0,
 int langkah;
 int lama_tampilnya;
@@ -35,24 +35,24 @@ int showmaghrib_x = 32, showmaghrib_y = 0, showmaghrib_x1 = 36, showmaghrib_y1 =
 int showisya_x = 80, showisya_y = 0, showisya_x1 = 83, showisya_y1 = 9;             // variabel buat ngatur isya
 int showimsak_x = 127, showimsak_y = 0, showimsak_x1 = 127, showimsak_y1 = 9;       // variabel buat ngatur waktu imsak
 int lamatimetoazan = 24000;                                                         //milisecond
-int lamaiqomah = 10;                                                                 //menit
+int lamaiqomah = 10;                                                                //menit
 
-char* imam_subuh0 = "UST.DRS.H.AHMAD YANI", *imam_subuh1 = "UST.KAMALUDDIN", * imam_subuh2 = "UST.H.YALET.N", * imam_subuh3 = "UST.TAUFIQ ISMAIL", * imam_subuh4 = "UST.UJANG MUSA ";
+char *imam_subuh0 = "UST.DRS.H.AHMAD YANI", *imam_subuh1 = "UST.KAMALUDDIN", *imam_subuh2 = "UST.H.YALET.N", *imam_subuh3 = "UST.TAUFIQ ISMAIL", *imam_subuh4 = "UST.UJANG MUSA ";
 int imam_subuh0pj = 19, imam_subuh1pj = 15, imam_subuh2pj = 13, imam_subuh3pj = 17, imam_subuh4pj = 14;
-char *imam_magrib0 = "UST.DRS.H.AHMAD YANI", * imam_magrib1 = "UST.KAMALUDDIN", * imam_magrib2 = "UST.H.YALET.N", * imam_magrib3 = "UST.TAUFIQ ISMAIL", * imam_magrib4 = "UST.UJANG MUSA";
+char *imam_magrib0 = "UST.DRS.H.AHMAD YANI", *imam_magrib1 = "UST.KAMALUDDIN", *imam_magrib2 = "UST.H.YALET.N", *imam_magrib3 = "UST.TAUFIQ ISMAIL", *imam_magrib4 = "UST.UJANG MUSA";
 int imam_magrib0pj = 19, imam_magrib1pj = 15, imam_magrib2pj = 13, imam_magrib3pj = 17, imam_magrib4pj = 14;
-char* imam_isya0 = "UST.DRS.H.AHMAD YANI", * imam_isya1 = "UST.KAMALUDDIN", * imam_isya2 = "UST.H.YALET.N", * imam_isya3 = "UST.TAUFIQ ISMAIL", * imam_isya4 = "UST.UJANG MUSA";
+char *imam_isya0 = "UST.DRS.H.AHMAD YANI", *imam_isya1 = "UST.KAMALUDDIN", *imam_isya2 = "UST.H.YALET.N", *imam_isya3 = "UST.TAUFIQ ISMAIL", *imam_isya4 = "UST.UJANG MUSA";
 int imam_isya0pj = 19, imam_isya1pj = 15, imam_isya2pj = 13, imam_isya3pj = 17, imam_isya4pj = 14;
 char *khotib0 = "UST.KAMALUDDIN", khotib1 = "UST.H.YALET.N", khotib2 = "UST.TAUFIQ ISMAIL", khotib3 = "UST.UJANG MUSA";
 int imam_khotib0pj = 19, imam_khotib1pj = 15, imam_khotib2pj = 13, imam_khotib3pj = 17, imam_khotib4pj = 14;
 
-char* iqomahtext = "IQOMAH";
+char *iqomahtext = "IQOMAH";
 int iqomah_x = 124, iqomah_y = 0, imam_x = 1, imam_y = 0, textimam_x = 1, textimam_y = 8;
 
 String textjalannamamasjid = "AL-HADI DULIDO MOSQUE";
 String textinfojalan = "DON'T BE NOISE - STRAIGHTEN AND CLOSE THE LINE ! { ROBOTIC STUDY CLUB }";
 
-DateTime dt(2018, 2, 15, 4, 36, 50 , 3);
+DateTime dt(2018, 2, 15, 4, 36, 50, 3);
 void ScanDMD()
 {
   dmd.scanDisplayBySPI();
@@ -372,39 +372,39 @@ void mulai()
       dmd.clearScreen(true);
       switch (harin_e)
       {
-        case 0: // your hand is on the sensor
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT SUBUH", 17, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_subuh0, imam_subuh0pj, 0); //koordinat tampilan
-          break;
-        case 1: // your hand is close to the sensor
+      case 0: // your hand is on the sensor
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT SUBUH", 17, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_subuh0, imam_subuh0pj, 0); //koordinat tampilan
+        break;
+      case 1: // your hand is close to the sensor
 
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT SUBUH", 17, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_subuh1, imam_subuh1pj, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT SUBUH", 17, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_subuh1, imam_subuh1pj, 0); //koordinat tampilan
 
-          break;
-        case 2: // your hand is a few inches from the sensor
+        break;
+      case 2: // your hand is a few inches from the sensor
 
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT SUBUH", 17, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_subuh2, imam_subuh2pj, 0); //koordinat tampilan
-          break;
-        case 3: // your hand is nowhere near the sensor
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT SUBUH", 17, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_subuh3, imam_subuh3pj, 0); //koordinat tampilan
-          break;
-        case 4: // your hand is nowhere near the sensor
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT SUBUH", 17, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_subuh4, imam_subuh4pj, 0); //koordinat tampilan
-          break;
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT SUBUH", 17, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_subuh2, imam_subuh2pj, 0); //koordinat tampilan
+        break;
+      case 3: // your hand is nowhere near the sensor
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT SUBUH", 17, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_subuh3, imam_subuh3pj, 0); //koordinat tampilan
+        break;
+      case 4: // your hand is nowhere near the sensor
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT SUBUH", 17, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_subuh4, imam_subuh4pj, 0); //koordinat tampilan
+        break;
       }
 
       dmd.selectFont(SystemFont5x7);
@@ -592,9 +592,10 @@ void mulai()
 
   //----------------------------------------------------------------------
   //jam hari Jum'at----JUM'AT--------JUM'AT--------JUM'AT----JUM'AT----JUM'AT----JUM'AT----JUM'AT----JUM'AT----JUM'AT------------------------------------------
-  dmd.clearScreen( true );
+  dmd.clearScreen(true);
 
-  while (millis() - mulai < 90000) {
+  while (millis() - mulai < 90000)
+  {
     ///////////////////////
     DateTime now = rtc.now();
     String hariku = Konversi(now.date()) + "/" + Konversi(now.month()) + "/" + Konversi(now.year()) + " "; //tampilan tanggal
@@ -610,20 +611,15 @@ void mulai()
     dmd.selectFont(SystemFont5x7);
     dmd.drawString(5, 5, sjam, pjg, 0);
 
-
-
-
     /////////////////////
     int harin_e = now.dayOfWeek();
     get_float_time_parts(times[2], hours, minutes);
-    if ((now.hour() == hours && now.minute() == minutes && harin_e == 4) || (now.hour() == hours && now.minute() == minutes + 1 && harin_e == 4) || (now.hour() == hours && now.minute() == minutes + 2 && harin_e == 4)
-        || (now.hour() == hours && now.minute() == minutes + 3 && harin_e == 4)
-        || (now.hour() == hours && now.minute() == minutes + 4 && harin_e == 4)
-        || (now.hour() == hours && now.minute() == minutes + 5 && harin_e == 4)) {
+    if ((now.hour() == hours && now.minute() == minutes && harin_e == 4) || (now.hour() == hours && now.minute() == minutes + 1 && harin_e == 4) || (now.hour() == hours && now.minute() == minutes + 2 && harin_e == 4) || (now.hour() == hours && now.minute() == minutes + 3 && harin_e == 4) || (now.hour() == hours && now.minute() == minutes + 4 && harin_e == 4) || (now.hour() == hours && now.minute() == minutes + 5 && harin_e == 4))
+    {
       int tampil;
-      dmd.clearScreen( true );
-      for (tampil = 0; tampil < 1550 ; tampil++) {
-
+      dmd.clearScreen(true);
+      for (tampil = 0; tampil < 1550; tampil++)
+      {
 
         dmd.selectFont(SystemFont5x7);
         dmd.drawString(9, 0, "TIME TO KHOTBAH", 15, 0); //koordinat tampilan
@@ -637,20 +633,12 @@ void mulai()
         dmd.drawString(62, 9, sjam, pjg, 0);
 
         /////////////////////
-        delay (1000);
-
+        delay(1000);
       }
-
     }
-
-
   }
 
-
-
   ////-----AKHIR CODING JIKA HARI JUM'AT-----
-
-
 
   //jam adzan Asar----------------------------------------------------------
   dmd.clearScreen(true);
@@ -695,7 +683,6 @@ void mulai()
       int iqomah;
 
       dmd.clearScreen(true);
-      
 
       dmd.selectFont(SystemFont5x7);
       dmd.drawString(50, iqomah_y, iqomahtext, 6, 0); //koordinat tampilan
@@ -805,7 +792,7 @@ void mulai()
       dmd.clearScreen(true);
       dmd.selectFont(SystemFont5x7);
       dmd.drawString(10, 5, "TIME TO ADZAN MAGHRIB ", 21, 0); //koordinat tampilan
-      
+
       delay(lamatimetoazan);
 
       //iqomah----------------------------------
@@ -817,39 +804,39 @@ void mulai()
       dmd.clearScreen(true);
       switch (harin_e)
       {
-        case 0: // your hand is on the sensor
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT MAGHRIB", 19, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_magrib0, 21, 0); //koordinat tampilan
-          break;
-        case 1: // your hand is close to the sensor
+      case 0: // your hand is on the sensor
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT MAGHRIB", 19, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_magrib0, 21, 0); //koordinat tampilan
+        break;
+      case 1: // your hand is close to the sensor
 
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT MAGHRIB", 19, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_magrib1, 21, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT MAGHRIB", 19, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_magrib1, 21, 0); //koordinat tampilan
 
-          break;
-        case 2: // your hand is a few inches from the sensor
+        break;
+      case 2: // your hand is a few inches from the sensor
 
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT MAGHRIB", 19, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_magrib2, 21, 0); //koordinat tampilan
-          break;
-        case 3: // your hand is nowhere near the sensor
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT MAGHRIB", 19, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_magrib3, 21, 0); //koordinat tampilan
-          break;
-        case 4: // your hand is nowhere near the sensor
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT MAGHRIB", 19, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_magrib4, 21, 0); //koordinat tampilan
-          break;
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT MAGHRIB", 19, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_magrib2, 21, 0); //koordinat tampilan
+        break;
+      case 3: // your hand is nowhere near the sensor
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT MAGHRIB", 19, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_magrib3, 21, 0); //koordinat tampilan
+        break;
+      case 4: // your hand is nowhere near the sensor
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT MAGHRIB", 19, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_magrib4, 21, 0); //koordinat tampilan
+        break;
       }
 
       dmd.selectFont(SystemFont5x7);
@@ -955,7 +942,7 @@ void mulai()
       dmd.clearScreen(true);
       dmd.selectFont(SystemFont5x7);
       dmd.drawString(10, 5, "TIME TO ADZAN ISYA", 20, 0); //koordinat tampilan
-     
+
       delay(lamatimetoazan);
       //iqomah----------------------------------
       int langkah;
@@ -965,39 +952,38 @@ void mulai()
       dmd.clearScreen(true);
       switch (harin_e)
       {
-        case 0: // your hand is on the sensor
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT ISYA", 17, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_isya0, 21, 0); //koordinat tampilan
-          break;
-        case 1: // your hand is close to the sensor
+      case 0: // your hand is on the sensor
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT ISYA", 17, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_isya0, 21, 0); //koordinat tampilan
+        break;
+      case 1: // your hand is close to the sensor
 
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT ISYA", 17, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_isya1, 21, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT ISYA", 17, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_isya1, 21, 0); //koordinat tampilan
 
-          break;
-        case 2: // your hand is a few inches from the sensor
+        break;
+      case 2: // your hand is a few inches from the sensor
 
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT ISYA", 17, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_isya2, 21, 0); //koordinat tampilan
-          break;
-        case 3: // your hand is nowhere near the sensor
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT ISYA", 17, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_isya3, 21, 0); //koordinat tampilan
-          break;
-        case 4 : // your hand is nowhere near the sensor
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT ISYA", 17, 0); //koordinat tampilan
-          dmd.selectFont(SystemFont5x7);
-          dmd.drawString(imam_x, imam_y, imam_isya4, 21, 0); //koordinat tampilan
-
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT ISYA", 17, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_isya2, 21, 0); //koordinat tampilan
+        break;
+      case 3: // your hand is nowhere near the sensor
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT ISYA", 17, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_isya3, 21, 0); //koordinat tampilan
+        break;
+      case 4: // your hand is nowhere near the sensor
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(textimam_x, textimam_y, "IMAM SHOLAT ISYA", 17, 0); //koordinat tampilan
+        dmd.selectFont(SystemFont5x7);
+        dmd.drawString(imam_x, imam_y, imam_isya4, 21, 0); //koordinat tampilan
       }
 
       dmd.selectFont(SystemFont5x7);
